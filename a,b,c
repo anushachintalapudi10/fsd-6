@@ -1,0 +1,103 @@
+ReactJS – Props and States, Styles, Respond to events.
+a.Write a program to work with props and states.
+b.Write a program to add styles (CSS & Sass Styling) and display data.
+c.Write a program for responding to events
+ Props → pass data (read-only).
+ State → manage data (can change).
+ Styles → control look (CSS).
+ Events → respond to user actions.
+a. Write a program to work with props and states.
+ props
+ Definition: Props are used to pass data from one component to another (like function 
+arguments in JavaScript).
+ Nature: Read-only (cannot be changed by the component that receives them).
+ Use: Reusable components, you can send different values each time.
+States
+ Definition: State is data that is managed inside a component.
+ Nature: Mutable (can be updated).
+ Use: To make web pages interactive (like counters, messages, etc.).
+Program steps:
+1. Create a New React Project
+1. Open Command Prompt / Terminal.
+2. Navigate to desired folder:
+3. cd Desktop
+4. Create React app:
+5. npx create-react-app my-app
+6. Go inside folder:
+cd my-app
+2. Open Project in VS Code
+ Open VS Code.
+ Click File → Open Folder.
+ Select your React project folder (example: my-app).
+ You’ll now see folders like node_modules, public, src.
+3. Locate App.js
+ In the left sidebar (Explorer), open the src folder.
+ Double-click App.js → this is where we write React code. 4. Replace Code
+ Delete the default code in App.js.
+ Paste the React program I gave you (Props & State, Styles, or Events).
+ Example (Props & State)
+Source code
+import React, { useState } from "react";
+import "./App.css";
+export default function App() {
+ const [count, setCount] = useState(0);
+ return (
+ <div className="container">
+ <h2 className="paraStyle">Hello, Students!</h2>
+ <p>You clicked {count} times</p>
+ <button onClick={() => setCount(count + 1)}>
+ Click Me
+ </button>
+ </div>
+ );
+}
+OUTPUT: b. Write a program to add styles (CSS & Sass Styling) and display data.
+ Definition: Used to change the appearance of elements in React.
+ Types:
+o Inline styling – directly inside the element.
+o External CSS – written in .css file and applied using className.
+Example:
+<h1 style={{ color: "blue" }}>Inline Style Example</h1>
+<p className="paraStyle">External CSS Example</p>
+App.css
+.paraStyle { 
+color: green; 
+font-size: 18px;
+font-weight: bold;
+}
+For Styling Program
+ Create a new file inside src → App.css.
+ Paste CSS code:
+ Make sure App.js has this line at the top:
+ import "./App.css";
+4. Save Files
+ Press Ctrl + S (Windows)
+5. Run the Project
+ Open Terminal in VS Code → 
+(Menu: Terminal → NewTerminal).
+ Start React app:
+ npm start
+.paraStyle { 
+color: green; 
+font-size: 18px;
+font-weight: bold;
+}  Browser opens at http://localhost:3000 → you’ll see your output.
+6. Modify & See Changes
+ Whenever you change code in App.js or App.css, just save → Browser auto-
+refreshes with new result.
+Output:
+c.Write a program for responding to events
+ Definition: React can listen to user actions (events) like clicks, typing, 
+mouse over, etc.
+ Use: Makes websites interactive.
+App.js file
+import React, { useState } from "react";
+export default function App() {
+const [message, setMessage] = useState("Click the button!");
+return (
+<div>
+<h2>{message}</h2>
+<button onClick={() => setMessage("Button was clicked!")}>Click Me</button> </div>
+);
+}
+Output:
